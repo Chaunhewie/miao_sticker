@@ -28,33 +28,33 @@
     </view>
   </view>
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-    <view class="cu-item">
+    <view class="cu-item arrow">
       <view class="content" bindtap="CopyLink" data-link="">
-        <text class="cuIcon-github text-grey"></text>
+        <text class="cuIcon-github text-molan02"></text>
         <text class="text-grey">GitHub</text>
       </view>
     </view>
-    <view class="cu-item">
+    <view class="cu-item arrow">
       <navigator class="content" url="/pages/about/about/about" hover-class="none">
         <image src="/assets/img/MiaoLogo.png" class="png" mode="aspectFit"></image>
         <text class="text-grey">关于喵贴</text>
       </navigator>
     </view>
-    <view class="cu-item">
+    <view class="cu-item arrow">
       <navigator class="content" url="/pages/about/log/log" hover-class="none">
-        <text class="cuIcon-formfill text-green"></text>
+        <text class="cuIcon-formfill text-molan12"></text>
         <text class="text-grey">日志</text>
       </navigator>
     </view>
-    <view class="cu-item">
+    <view class="cu-item arrow">
       <view class="content" bindtap="showQrcode">
         <text class="cuIcon-appreciatefill text-red"></text>
         <text class="text-grey">赞赏支持</text>
       </view>
     </view>
-    <view class="cu-item">
+    <view class="cu-item arrow">
       <button class="cu-btn content" open-type="feedback">
-        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="cuIcon-writefill text-brown"></text>
         <text class="text-grey">意见反馈</text>
       </button>
     </view>
