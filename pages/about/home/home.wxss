@@ -1,6 +1,5 @@
 /* pages/about/home/home.wxss */
 .UCenter-bg {
-  background-image: url(https://image.weilanwl.com/color2.0/index.jpg);
   background-size: cover;
   height: 550rpx;
   display: flex;
@@ -10,7 +9,7 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  color: #fff;
+  color: bg-molan10;
   font-weight: 300;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
@@ -32,16 +31,4 @@
   z-index: 99;
   mix-blend-mode: screen;  
   height: 100rpx;   
-}
-
-map,.mapBox{
-  left: 0;
-  z-index: 99;
-  mix-blend-mode: screen;  
-  height: 100rpx;   
-}
-
-map,.mapBox{
-  width: 750rpx;
-  height: 300rpx;
 }

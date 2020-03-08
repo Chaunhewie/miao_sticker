@@ -1,2 +1,18 @@
 <!--pages/about/log/log.wxml-->
-<text>pages/about/log/log.wxml</text>
+<cu-custom bgColor="bg-gradual-molan26to30" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">日志</view></cu-custom>
+<view class="cu-timeline">
+  <view class="cu-item text-bergundy bg-nearlyWhite">
+    <view class="bg-gradual-molan14to26 content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-nearlyWhite text-bergundy">v1.0.0</view>
+        <view class="cu-tag line-nealyWhite">2020/03/09</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.完成任务清单功能</view>
+        <view>2.完成笔记贴功能</view>
+        <view>3.完成打卡喵币积累功能</view>
+        <view>4.优化页面色调</view>
+      </view>
+    </view>   
+  </view>
+</view>

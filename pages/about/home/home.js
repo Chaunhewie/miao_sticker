@@ -71,8 +71,8 @@ Component({
     },
     showQrcode() {
       wx.previewImage({
-        urls: ['/assets/img/ShareQRCode.jpg'],
-        current: '/assets/img/ShareQRCode.jpg' // 当前显示图片的http链接      
+        urls: ['https://raw.githubusercontent.com/Chaunhewie/miao_sticker/master/assets/img/ShareQRCode.jpg'],
+        current: 'https://raw.githubusercontent.com/Chaunhewie/miao_sticker/master/assets/img/ShareQRCode.jpg' // 当前显示图片的http链接      
       })
     },
   }

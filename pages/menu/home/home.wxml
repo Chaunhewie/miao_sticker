@@ -1,6 +1,6 @@
 <!--pages/menu/home/home.wxml-->
-<scroll-view scroll-y class="scrollPage bg-molan10">
-  <image src='/assets/img/menu_winter_bg.jpeg' mode='widthFix' class='bg' style='width:100%;height:486rpx'></image>
+<scroll-view scroll-y class="scrollPage bg-gradual-DesktopWhite">
+  <image src='/assets/img/Desktop01.jpg' mode='widthFix' class='bg' style='width:100%;height:486rpx'></image>
   <view class='nav-list'>
     <navigator open-type="navigate" hover-class='none' url="{{item.url}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key="id">
       <view class="nav-title">{{item.title}}</view>
@@ -8,5 +8,6 @@
       <text class='cuIcon-{{item.icon}}'></text>
     </navigator>
   </view>
+  <image src='/assets/img/Desktop02_cropped.jpg' mode='widthFix' class='bg' style='width:100%'></image>
   <view class='cu-tabbar-height'></view>
 </scroll-view>
