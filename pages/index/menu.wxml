@@ -1,0 +1,17 @@
+<!--pages/index/menu.wxml-->
+<menu wx:if="{{PageCur=='menu'}}"></menu>
+<about wx:if="{{PageCur=='about'}}"></about>
+<view class="cu-bar tabbar bg-molan10 shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="menu">
+    <view class="menu-box">
+      <text class="cuIcon-apps lg {{PageCur=='menu'?'text-bergundy':'text-gray'}}"></text>
+      <text>Menu</text>
+    </view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="about">
+    <view class="about-box">
+      <text class="cuIcon-question lg {{PageCur=='about'?'text-bergundy':'text-gray'}}"></text>
+      <text>About</text>
+    </view>
+  </view>
+</view>
