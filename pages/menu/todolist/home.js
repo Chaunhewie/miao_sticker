@@ -1,4 +1,7 @@
-// pages/menu/todolist/todolist.js
+// pages/menu/todolist/home.js
+import Todo from '../../../models/Todo'
+import storeManager from '../../../store/storeManager'
+
 Page({
 
   /**

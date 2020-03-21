@@ -1,4 +1,4 @@
-// pages/menu/sticker/sticker.js
+// pages/menu/stickerlist/create.js
 Page({
 
   /**

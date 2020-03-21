@@ -1,4 +1,4 @@
-// pages/menu/todolist/todolist.js
+// pages/menu/todolist/create.js
 Page({
 
   /**

@@ -1,7 +1,15 @@
 import storeManager from './store/storeManager'
+
 //app.js
 App({
-  onLaunch: function() {
+  config:{
+    //host: 'http://miaosticker.cn:14488/'  // 通讯域名
+    host: 'http://192.168.0.123:14488/'  // 通讯域名
+  },
+
+  onLaunch: function () {
+    // 读取数据
+    storeManager.read()
     // 登录
     wx.login({
       success: res => {

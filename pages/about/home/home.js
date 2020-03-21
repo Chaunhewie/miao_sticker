@@ -1,43 +1,63 @@
 // pages/about/home/home.js
+
+const app = getApp()
+
 Component({
   options: {
     addGlobalClass: true,
   },
+
   data: {
     starCount: 0,
     forksCount: 0,
     visitTotal: 0,
   },
+
   attached() {
-    console.log("success")
+    console.log("About home page, attached success")
     let that = this;
+    that.setData({
+      starCount: "...",
+      forksCount: "...",
+      visitTotal: "..."
+    })
     wx.showLoading({
       title: '数据加载中',
       mask: true,
     })
-    let i = 0;
-    numDH();
     function numDH() {
-      if (i < 20) {
-        setTimeout(function () {
+      wx.request({
+        url: app.config.host,
+        timeout: 1000,
+        method: "GET",
+        data: {
+          type: "r",
+        },
+        success: function(res) {
+          console.log("About home page, github info request success")
+          console.log(res.data)
           that.setData({
-            starCount: i,
-            forksCount: i,
-            visitTotal: i
+            starCount: that.coutNum(res.data["stargazers_count"]),
+            forksCount: that.coutNum(res.data["forks_count"]),
+            visitTotal: that.coutNum(res.data["watchers_count"])
           })
-          i++
-          numDH();
-        }, 20)
-      } else {
-        that.setData({
-          starCount: that.coutNum(3000),
-          forksCount: that.coutNum(484),
-          visitTotal: that.coutNum(24000)
-        })
-      }
+        },
+        fail: function(res) {
+          console.error("About home page, github info request failed")
+          that.setData({
+            starCount: "...",
+            forksCount: "...",
+            visitTotal: "..."
+          })
+        },
+        complete: function (res) {
+          wx.hideLoading()
+        }
+      })
     }
-    wx.hideLoading()
+    numDH();
   },
+
   methods: {
     coutNum(e) {
       if (e > 1000 && e < 10000) {
@@ -48,6 +68,7 @@ Component({
       }
       return e
     },
+
     CopyLink(e) {
       wx.setClipboardData({
         data: e.currentTarget.dataset.link,
@@ -59,21 +80,23 @@ Component({
         }
       })
     },
-    showModal(e) {
-      this.setData({
-        modalName: e.currentTarget.dataset.target
-      })
-    },
-    hideModal(e) {
-      this.setData({
-        modalName: null
-      })
-    },
+
     showQrcode() {
       wx.previewImage({
         urls: ['https://raw.githubusercontent.com/Chaunhewie/miao_sticker/master/assets/img/ShareQRCode.jpg'],
         current: 'https://raw.githubusercontent.com/Chaunhewie/miao_sticker/master/assets/img/ShareQRCode.jpg' // 当前显示图片的http链接      
       })
     },
+    // showModal(e) {
+    //   this.setData({
+    //     modalName: e.currentTarget.dataset.target
+    //   })
+    // },
+
+    // hideModal(e) {
+    //   this.setData({
+    //     modalName: null
+    //   })
+    // },
   }
 })
