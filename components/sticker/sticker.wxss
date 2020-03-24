@@ -1,0 +1,21 @@
+/* components/sticker/sticker.wxss */
+
+.sticker {
+  border-radius: 8rpx;
+  margin: 30rpx;
+  padding: 30rpx;
+  box-shadow: 3rpx 3rpx 15rpx 0 rgba(0, 0, 0, 0.1);
+  font-size: 32rpx;
+}
+
+.sticker__title {
+  display: block;
+  border-bottom: 1rpx dashed #b5c4b1;
+  padding: 0 20rpx 20rpx 0;
+}
+
+.sticker__content {
+  display: block;
+  padding: 20rpx 0 0 0;
+  font-size: 28rpx;
+}

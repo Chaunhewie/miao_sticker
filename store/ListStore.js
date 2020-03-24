@@ -6,8 +6,8 @@ class ListStore extends Store {
   constructor() {
     super()
     this.itemlist = []
-    this.key = '__itemlist__'  // 在使用时自行更改指定
-    this.init_key = '__itemlist_inited__'  // 在使用时自行更改指定
+    this.key = '__IL__' // 在使用时自行更改指定
+    this.init_key = '__IL_I__' // 在使用时自行更改指定
   }
 
   /**
@@ -25,8 +25,7 @@ class ListStore extends Store {
   /**
    * 如果对item_list有一开始的初始化展示，在此进行初始化设置
    */
-  init_list(){
-  }
+  init_list() {}
 
   /**
    * 获取笔记列表
@@ -102,6 +101,8 @@ class ListStore extends Store {
   read() {
     let itemlist = wx.getStorageSync(this.key) || []
     this.itemlist = itemlist
+    console.log("Store Read " + this.key)
+    // todo 请求服务器同步数据
   }
 
   /**
@@ -109,6 +110,8 @@ class ListStore extends Store {
    */
   save() {
     wx.setStorageSync(this.key, this.itemlist)
+    console.log("Store Saved " + this.key)
+    // todo 发送服务器同步数据
   }
 }
 

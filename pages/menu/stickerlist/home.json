@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "sticker": "/components/sticker/sticker",
+    "tipsInfo": "/components/tipsInfo/tipsInfo"
+  }
 }

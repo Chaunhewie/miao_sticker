@@ -1,4 +1,5 @@
 /* pages/about/home/home.wxss */
+
 .UCenter-bg {
   background-size: cover;
   height: 550rpx;
@@ -23,12 +24,12 @@
   height: 200rpx;
 }
 
-.UCenter-bg .gif-wave{
+.UCenter-bg .gif-wave {
   position: absolute;
   width: 100%;
   bottom: 0;
   left: 0;
   z-index: 99;
-  mix-blend-mode: screen;  
-  height: 100rpx;   
+  mix-blend-mode: screen;
+  height: 100rpx;
 }

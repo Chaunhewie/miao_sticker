@@ -5,7 +5,7 @@ import util from '../utils/util'
  * 模型基类
  */
 class Model {
-  constructor () {
+  constructor() {
     this.uuid = util.uuid()
   }
 

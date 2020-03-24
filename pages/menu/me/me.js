@@ -7,47 +7,47 @@ const app = getApp()
 
 Page({
   data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    userInfo: Object.assign({
-      avatarUrl: '../../../assets/img/MiaoLogo.png',
-      nickName: 'yh57231902'
-    }),
+    windowWidth: app.globalData.windowWidth,
+    statusBarHeight: app.globalData.statusBarHeight,
+    customBarHeight: app.globalData.customBarHeight,
+
+    userInfo: null,
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+    // 是否展示头像上面的性别小标：0不展示，1展示男，2展示女
+    showGenderFlag: 0,
 
     todolistCount: 0,
     todolistUncompletedCount: 0,
     todolistCompletedCount: 0,
     stickersCount: 0,
-    
+
     ringChart: null
   },
 
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.hasUserInfo) {
+      console.log("用户信息已获取")
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
+        showGenderFlag: app.globalData.userInfo.gender,
       })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
+      this.showGenderTag()
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
+      console.log("重新获取用户信息")
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo
+          console.log("用户信息获取成功")
           this.setData({
             userInfo: res.userInfo,
-            hasUserInfo: true
+            hasUserInfo: true,
+            showGenderFlag: app.globalData.userInfo.gender,
           })
+          app.globalData.userInfo = res.userInfo
+          app.globalData.hasUserInfo = true
+          // 登录
+          app.login()
         }
       })
     }
@@ -63,21 +63,6 @@ Page({
     this.renderCharts()
   },
 
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
-  
-  pageBack() {
-    wx.navigateBack({
-      delta: 1
-    });
-  },
-
   linkToTodolist() {
     wx.redirectTo({
       url: '../todolist/home'
@@ -86,7 +71,7 @@ Page({
 
   linkToSticker() {
     wx.redirectTo({
-      url: '../sticker/home'
+      url: '../stickerlist/home'
     })
   },
 
@@ -109,7 +94,7 @@ Page({
     this.updateCharts()
   },
 
-  updateCharts: function () {
+  updateCharts: function() {
     this.data.ringChart && this.data.ringChart.updateData({
       title: {
         name: [Math.round((this.data.todolistCompletedCount / this.data.todolistCount) * 100), '%'].join('')
@@ -129,7 +114,7 @@ Page({
   renderCharts() {
     this.data.ringChart = new wxCharts({
       animation: true,
-      canvasId: 'charts',
+      canvasId: 'charts_todolist_info',
       type: 'ring',
       extra: {
         ringWidth: 25,
@@ -164,5 +149,11 @@ Page({
       background: '#f5f5f5',
       padding: 0
     })
-  }
+  },
+
+  pageBack() {
+    wx.navigateBack({
+      delta: 1
+    });
+  },
 })

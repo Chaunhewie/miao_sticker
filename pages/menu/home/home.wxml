@@ -2,7 +2,9 @@
 <scroll-view scroll-y class="scrollPage bg-gradual-DesktopWhite">
   <image src='/assets/img/Desktop01.jpg' mode='widthFix' class='bg' style='width:100%;height:486rpx'></image>
   <view class='nav-list'>
-    <navigator open-type="navigate" hover-class='none' url="{{item.url}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key="id">
+    <!-- <navigator  wx:for="{{elements}}" wx:key="index" open-type="navigate" hover-class='none' url="{{item.url}}" class="nav-li bg-{{item.color}} animation-click-{{item.animation}}" data-class="shake" data-index="{{index}}" bindtap="handleClickAnimation"> -->
+    <navigator wx:for="{{elements}}" wx:key="index" open-type="navigate" hover-class='none' url="{{item.url}}" class="nav-li bg-{{item.color}} animation-click-{{item.animation}} animation-reverse" data-class="scale-down" data-index="{{index}}" bindtap="handleClickAnimation">
+      <!-- <navigator open-type="navigate" hover-class='none' url="{{item.url}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key="id"> -->
       <view class="nav-title">{{item.title}}</view>
       <view class="nav-name">{{item.name}}</view>
       <text class='cuIcon-{{item.icon}}'></text>

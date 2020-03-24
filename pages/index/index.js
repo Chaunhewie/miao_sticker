@@ -3,16 +3,14 @@
 const app = getApp()
 
 Page({
-  data: {
-  },
+  data: {},
 
   //事件处理函数
-  bindViewTap: function() {
-  },
+  bindViewTap: function() {},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     setTimeout(() => {
       // 打开菜单页面
       this.openPage()

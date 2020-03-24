@@ -110,6 +110,11 @@ page {
 	--gradualMolan26To30: linear-gradient(45deg, #6b5152, #7a7281);
 	--gradualMolan17To18: linear-gradient(45deg, #fdf9ee, #f0ebe5);
 	--gradualMolan14To26: linear-gradient(45deg, #656565, #6b5152);
+	--gradualMolan07To08: linear-gradient(45deg, #8696a7, #9ca8b8);
+	--gradualMolan12To11: linear-gradient(45deg, #7b8b6f, #91a48b);
+	--gradualMolan25To31: linear-gradient(45deg, #965454, #a27e7e);
+	--gradualMolan22To21: linear-gradient(45deg, #a29988, #b7b1a5);
+	--gradualMolan29To28: linear-gradient(45deg, #a6a6a8, #cac3bb);
 	/* 阴影透明色 */
 	--ShadowSize: 6rpx 6rpx 8rpx;
 	--redShadow: rgba(204, 69, 59, 0.2);
@@ -1023,8 +1028,8 @@ button.icon.lg {
 }
 
 .cu-avatar.xl {
-	width: 128rpx;
-	height: 128rpx;
+	width: 120rpx;
+	height: 120rpx;
 	font-size: 2.5em;
 }
 
@@ -3619,12 +3624,12 @@ scroll-view.cu-steps .cu-item {
 
 .bg-molan03 {
 	background-color: var(--molan03);
-	color: var(--black);
+	color: var(--greyLight);
 }
 
 .bg-molan04 {
 	background-color: var(--molan04);
-	color: var(--black);
+	color: var(--greyLight);
 }
 
 .bg-molan05 {
@@ -3902,6 +3907,31 @@ scroll-view.cu-steps .cu-item {
 .bg-gradual-molan14to26 {
 	background-image: var(--gradualMolan14To26);
 	color: var(--nearlyWhite);
+}
+
+.bg-gradual-molan07to08 {
+	background-image: var(--gradualMolan07To08);
+	color: var(--greyLight);
+}
+
+.bg-gradual-molan12to11 {
+	background-image: var(--gradualMolan12To11);
+	color: var(--nearlyWhite);
+}
+
+.bg-gradual-molan25to31 {
+	background-image: var(--gradualMolan25To31);
+	color: var(--greyLight);
+}
+
+.bg-gradual-molan22to21 {
+	background-image: var(--gradualMolan22To21);
+	color: var(--nearlyWhite);
+}
+
+.bg-gradual-molan29to28 {
+	background-image: var(--gradualMolan29To28);
+	color: var(--greyLight);
 }
 
 .shadow[class*="-red"] {

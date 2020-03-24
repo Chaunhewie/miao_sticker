@@ -25,22 +25,31 @@ Component({
       title: '数据加载中',
       mask: true,
     })
+
     function numDH() {
       wx.request({
-        url: app.config.host,
+        url: app.globalData.serverUrl,
         timeout: 1000,
         method: "GET",
         data: {
-          type: "r",
+          type: "repo_info",
         },
         success: function(res) {
           console.log("About home page, github info request success")
           console.log(res.data)
-          that.setData({
-            starCount: that.coutNum(res.data["stargazers_count"]),
-            forksCount: that.coutNum(res.data["forks_count"]),
-            visitTotal: that.coutNum(res.data["watchers_count"])
-          })
+          if (res.data["success"]) {
+            that.setData({
+              starCount: that.coutNum(res.data["stargazers_count"]),
+              forksCount: that.coutNum(res.data["forks_count"]),
+              visitTotal: that.coutNum(res.data["watchers_count"])
+            })
+          } else {
+            that.setData({
+              starCount: "...",
+              forksCount: "...",
+              visitTotal: "..."
+            })
+          }
         },
         fail: function(res) {
           console.error("About home page, github info request failed")
@@ -50,7 +59,7 @@ Component({
             visitTotal: "..."
           })
         },
-        complete: function (res) {
+        complete: function(res) {
           wx.hideLoading()
         }
       })
@@ -87,16 +96,5 @@ Component({
         current: 'https://raw.githubusercontent.com/Chaunhewie/miao_sticker/master/assets/img/ShareQRCode.jpg' // 当前显示图片的http链接      
       })
     },
-    // showModal(e) {
-    //   this.setData({
-    //     modalName: e.currentTarget.dataset.target
-    //   })
-    // },
-
-    // hideModal(e) {
-    //   this.setData({
-    //     modalName: null
-    //   })
-    // },
   }
 })

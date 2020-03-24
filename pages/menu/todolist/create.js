@@ -1,66 +1,92 @@
 // pages/menu/todolist/create.js
+import util from '../../../utils/util'
+import Todo from '../../../models/Todo'
+import storeManager from '../../../store/storeManager'
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    // todo
+    todo: new Todo(),
+    // 区分新建还是编辑
+    isNew: false,
+    // 级别
+    levels: ['紧急且重要', '重要不紧急', '紧急不重要', '不紧急不重要'],
+  },
 
+  onLoad: function(options) {
+    if (options.uuid) {
+      this.setData({
+        todo: storeManager.getTodolistStore().getItem(options.uuid)
+      })
+    } else {
+      this.setData({
+        todo: new Todo(),
+        isNew: true
+      })
+    }
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * Todo 改变事件
    */
-  onLoad: function (options) {
-
+  handleTodoChange(e) {
+    let todo = e.detail.data.todo
+    Object.assign(this.data.todo, todo)
+    this.update()
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 级别改变事件
    */
-  onReady: function () {
+  handleLevelChange(e) {
+    this.data.todo.level = parseInt(e.detail.value) + 1
+    this.update()
+  },
 
+  handlePlanToCompleteAtChange(e) {
+    this.data.todo.planToCompleteAt = e.detail
+    this.update()
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 内容输入事件
    */
-  onShow: function () {
-
+  handleContentChange(e) {
+    this.data.todo.content = e.detail.value
+    this.update()
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 取消按钮点击事件
    */
-  onHide: function () {
-
+  handleCancelTap(e) {
+    wx.navigateBack()
   },
 
   /**
-   * 生命周期函数--监听页面卸载
+   * 保存按钮点击事件
    */
-  onUnload: function () {
-
+  handleSaveTap(e) {
+    let todolistStore = storeManager.getTodolistStore()
+    if (this.data.isNew) {
+      todolistStore.addItem(this.data.todo)
+    }
+    todolistStore.save()
+    wx.navigateBack()
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * 更新数据
    */
-  onPullDownRefresh: function () {
-
+  update(data) {
+    data = data || this.data
+    this.data.todo.lastChangeAt = util.formatTime(new Date())
+    this.setData(data)
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  pageBack() {
+    wx.navigateBack({
+      delta: 1
+    });
   }
 })

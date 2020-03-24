@@ -2,20 +2,17 @@
  * Store 基类
  */
 class Store {
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * 读取数据
    */
-  read() {
-  }
+  read() {}
 
   /**
    * 保存数据
    */
-  save() {
-  }
+  save() {}
 }
 
 export default Store

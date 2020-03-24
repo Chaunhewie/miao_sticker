@@ -1,0 +1,18 @@
+<!--components/todo/todo.wxml-->
+<view class="todo todo--level{{ todo.level }} {{ todo.completed ? 'todo--completed' : '' }}">
+  <view class="todo__col1">
+    <todoCheckbox class="todo__checkbox" checked="{{ todo.completed }}" level="{{ todo.level }}" bindchange="handleCompletedChange">
+    </todoCheckbox>
+  </view>
+  <view class="todo__col2" bindtap="handleTitleTap">
+    <input class="todo__title" value="{{ todo.title }}" placeholder="请输入标题..." bindinput="handleTitleChange" auto-focus="{{ autoFocusTitle }}" disabled="{{ disableChangeTitle }}">
+    </input>
+  </view>
+  <view class="todo__col3" bindtap="handleDateTap">
+    <view class="todo__date" wx:if="{{showDateType == 0}}">{{ todo.createdAt }}</view>
+    <view class="todo__date" wx:elif="{{showDateType == 1}}">{{ todo.lastChangeAt }}</view>
+    <view class="todo__date" wx:elif="{{showDateType == 2}}">{{ todo.planToCompleteAt }}</view>
+    <view class="todo__date" wx:elif="{{showDateType == 3}}">{{ todo.completedAt }}</view>
+    <view wx:else class="todo__date">{{ todo.createAt }}</view>
+  </view>
+</view>

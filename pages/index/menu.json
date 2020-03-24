@@ -2,5 +2,5 @@
   "usingComponents": {
     "menu": "/pages/menu/home/home",
     "about": "/pages/about/home/home"
-    }
+  }
 }

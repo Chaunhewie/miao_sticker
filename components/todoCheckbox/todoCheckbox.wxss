@@ -1,0 +1,33 @@
+/* components/todoCheckbox/todoCheckbox.wxss */
+
+.todoCheckbox {
+  display: inline-block;
+  padding: 6rpx 10rpx;
+  vertical-align: middle;
+}
+
+.todoCheckbox__icon {
+  color: white !important;
+  border: 4rpx solid #8696a7;
+  padding: 3rpx;
+}
+
+.level--1 {
+  border-color: rgb(223, 25, 25);
+}
+
+.level--2 {
+  border-color: rgb(204, 123, 2);
+}
+
+.level--3 {
+  border-color: rgb(1, 111, 167);
+}
+
+.level--4 {
+  border-color: #6d7c61;
+}
+
+.todoCheckbox--checked .todoCheckbox__icon {
+  border-color: #c1c5c8 !important;
+}

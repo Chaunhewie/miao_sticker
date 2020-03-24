@@ -21,7 +21,19 @@ const uuid = () => {
   })
 }
 
+//设置当前时间为默认选择的时间
+const getCurTimeIndex = () => {
+  var date = new Date()
+  const year = date.getFullYear()
+  const month = date.getMonth()
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  return [year, month, day - 1, hour, minute]
+}
+
 module.exports = {
   formatTime: formatTime,
-  uuid: uuid
+  uuid: uuid,
+  getCurTimeIndex: getCurTimeIndex,
 }

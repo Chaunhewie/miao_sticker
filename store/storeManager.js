@@ -38,8 +38,8 @@ class StoreManager extends Store {
     console.info("store manager saved.")
   }
 
-  getStickerlistStore(){
-    if(this.stickerlistStore == null){
+  getStickerlistStore() {
+    if (this.stickerlistStore == null) {
       this.stickerlistStore = new StickerlistStore()
     }
     return this.stickerlistStore

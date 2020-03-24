@@ -1,4 +1,5 @@
 /* pages/menu/me/me.wxss */
+
 .user-card {
   box-shadow: 0 0 15rpx 0 rgba(0, 0, 0, 0.1);
   position: relative;
@@ -18,13 +19,29 @@
   z-index: -1;
 }
 
-.user-card__head {
-  width: 120rpx;
-  height: 120rpx;
-  border: 1px solid #b7b1a5;
-  border-radius: 50%;
+.user-card__info {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-card__headAndTag {
+  position: relative;
+  display: block;
   margin-left: 7%;
   margin-right: 30rpx;
+}
+
+.user-card__head {
+  overflow: hidden;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 1px solid #b7b1a5;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-card__name {
+  padding-top: 79rpx;
 }
 
 .user-card__links {

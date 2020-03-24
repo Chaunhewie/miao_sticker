@@ -1,0 +1,9 @@
+<!--components/sticker/sticker.wxml-->
+<view class="sticker bg-nearlyWhite">
+  <view wx:if="{{ !!sticker.title }}" class="sticker__title text-darkGray">
+    {{sticker.title}}
+  </view>
+  <view class="sticker__content text-molan30">
+    {{sticker.content || '新建笔记'}}
+  </view>
+</view>

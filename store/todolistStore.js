@@ -9,8 +9,8 @@ class TodolistStore extends ListStore {
   constructor() {
     super()
     this.itemlist = []
-    this.key = '__todolist__'
-    this.init_key = '__todolist_inited__'
+    this.key = '__TL__'
+    this.init_key = '__TL_I__'
     this.__init()
   }
 
@@ -18,64 +18,81 @@ class TodolistStore extends ListStore {
    * 如果未初始化过item_list，在此进行初始化提示
    */
   init_list() {
+    var dateStr = util.formatTime(new Date())
     this.itemlist = this.itemlist.concat([new Todo({
       title: '欢迎使用TodoList',
-      completed: false,
       level: 1,
-      createdAt: new Date()
+      createdAt: dateStr,
+      lastChangeAt: dateStr,
+      planToCompleteAt: dateStr,
+      completed: false,
     }), new Todo({
       title: '点击左边勾选框完成一项任务',
-      completed: false,
       level: 1,
-      createdAt: new Date()
-    }), new Todo({
-      title: '点击标题可以编辑任务哦',
+      createdAt: dateStr,
+      lastChangeAt: dateStr,
+      planToCompleteAt: dateStr,
       completed: false,
+    }), new Todo({
+      title: '点击标题或者时间可以编辑任务哦',
       level: 2,
-      createdAt: new Date()
-    }), new Todo({
-      title: '点击右边日期可修改日期',
+      createdAt: dateStr,
+      lastChangeAt: dateStr,
+      planToCompleteAt: dateStr,
       completed: false,
-      level: 3,
-      createdAt: new Date()
+    }), new Todo({
+      title: '点击`创建时间`切换时间展示类型',
+      level: 2,
+      createdAt: "2020/03/24 10:00:00",
+      lastChangeAt: "2020/03/24 10:10:23",
+      planToCompleteAt: dateStr,
+      completed: false,
     }), new Todo({
       title: '点击下面的 + 新建一项任务吧',
-      completed: false,
       level: 4,
-      createdAt: new Date()
+      createdAt: "2020/03/24 14:21:43",
+      lastChangeAt: "2020/03/24 14:52:52",
+      planToCompleteAt: dateStr,
+      completed: false,
     }), new Todo({
       title: '长按可删除任务',
-      completed: false,
       level: 4,
-      createdAt: new Date()
+      createdAt: "2020/03/24 22:53:00",
+      lastChangeAt: "2020/03/24 22:54:59",
+      planToCompleteAt: dateStr,
+      completed: false,
     }), new Todo({
       title: '这是一条已完成的任务1',
+      level: 1,
+      createdAt: "2020/03/23 21:00:30",
+      lastChangeAt: "2020/03/24 13:21:14",
+      planToCompleteAt: "2020/03/24 22:50:00",
+      completedAt: "2020/03/24 21:20:00",
       completed: true,
-      level: 4,
-      date: new Date('2017/11/18'),
-      createdAt: new Date(),
-      completedAt: new Date('2017/11/18')
     }), new Todo({
       title: '这是一条已完成的任务2',
+      level: 2,
+      createdAt: "2020/03/23 21:00:30",
+      lastChangeAt: "2020/03/24 13:21:14",
+      planToCompleteAt: "2020/03/24 22:50:00",
+      completedAt: "2020/03/24 21:20:00",
       completed: true,
-      level: 4,
-      date: new Date('2017/11/19'),
-      createdAt: new Date(),
-      completedAt: new Date('2017/11/19')
     }), new Todo({
       title: '这是一条已完成的任务3',
+      level: 3,
+      createdAt: "2020/03/23 21:00:30",
+      lastChangeAt: "2020/03/24 13:21:14",
+      planToCompleteAt: "2020/03/24 22:50:00",
+      completedAt: "2020/03/24 21:20:00",
       completed: true,
-      level: 4,
-      date: new Date('2017/11/20'),
-      createdAt: new Date(),
-      completedAt: new Date('2017/11/20')
     }), new Todo({
       title: '这是一条已完成的任务4',
-      completed: true,
       level: 4,
-      date: new Date('2017/11/20'),
-      createdAt: new Date(),
-      completedAt: new Date('2017/11/20')
+      createdAt: "2020/03/23 21:00:30",
+      lastChangeAt: "2020/03/24 13:21:14",
+      planToCompleteAt: "2020/03/24 22:50:00",
+      completedAt: "2020/03/24 21:20:00",
+      completed: true,
     })])
   }
 

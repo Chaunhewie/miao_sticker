@@ -1,4 +1,5 @@
 /* pages/index/index.wxss */
+
 .UCenter-bg {
   background-size: 100% 100%;
   height: 100%;

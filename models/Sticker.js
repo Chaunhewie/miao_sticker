@@ -10,6 +10,7 @@ class Sticker extends Model {
     Object.assign(this, {
       title: '',
       content: '',
+      disabled: false,
       createdAt: util.formatTime(new Date())
     }, model)
 

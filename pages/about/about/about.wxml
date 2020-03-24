@@ -1,13 +1,18 @@
 <!--pages/about/about/about.wxml-->
-<cu-custom bgColor="bg-gradual-molan26to30" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于</view></cu-custom>
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">关于</view>
+</cu-custom>
 <view class='margin-xl bg-nearlyWhite padding-xl radius shadow-lg'>
   <view class='text-center margin-bottom text-lg  text-bergundy'>关于喵贴</view>
   <view class='text-content'>
-    <view>你好~喵贴用户</view>
-    <view class='margin-top-sm'>该项目是我和女朋友一起开发的一款小程序，基于ColorUI组件库所搭建（感谢文晓港的付出）；可以添加任务清单，可以记录自己的笔记贴（目前均保存在本地，不会上传服务器）。或者你有一些好的想法可以在GitHub里提交给我，我会继续迭代完善喵贴小程序。</view>
-    <view class='margin-top-sm'>项目是开源的，不收取任何费用，如果这个项目有帮到你，或者你觉得很赞，可以在GitHub里扫描赞赏码支持一下！</view>
-    <view class='margin-top-sm'>我和我女朋友对这个小程序均付出了不少的心血，如果你自己拷贝了一份，并且酌情修改，做成了自己的独立小程序，请标注原作者~ 感谢支持！！！</view>
-    <view class='margin-top-sm'>注：请勿用做商业用途~</view>
-    <view class='margin-top-sm'>更多功能敬请期待！</view>
+    <view class="margin-top-sm ">你好~喵贴用户</view>
+    <view class="log-content margin-top-sm">`喵贴`是我和女朋友一起开发的一款小程序，基于ColorUI组件库所搭建（感谢文晓港的付出）</view>
+    <view class="log-content margin-top-sm">小程序支持添加任务清单、记录自己的笔记贴（目前均保存在本地，不会上传服务器）。</view>
+    <view class="log-content margin-top-sm">后续预计添加任务清单的悬赏功能，允许绑定另一半信息，实现两个人之间的交互功能。如果你有一些好的想法可以在GitHub里提交给我，我会继续迭代完善喵贴小程序。</view>
+    <view class="log-content margin-top-sm">项目是开源的，不收取任何费用，如果这个项目有帮到你，或者你觉得很赞，可以在GitHub里扫描赞赏码支持一下！</view>
+    <view class="log-content margin-top-sm">我和我女朋友对这个小程序均付出了不少的心血，如果你自己拷贝了一份，并且酌情修改，做成了自己的独立小程序，请标注原作者~ 感谢支持！！！</view>
+    <view class="margin-top-sm">注：请勿用做商业用途~</view>
+    <view class="margin-top-sm">更多功能敬请期待！</view>
   </view>
 </view>

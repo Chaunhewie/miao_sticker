@@ -1,1 +1,79 @@
 /* pages/menu/todolist/create.wxss */
+
+.page {
+  background-color: rgba(231, 231, 231, 0.5);
+}
+
+.cu-form-group .todo__lastChangeAtText {
+  font-size: 28rpx;
+  color: #808080;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.cu-form-group .todo__lastChangeAt {
+  font-size: 28rpx;
+  color: #aaa;
+  display: inline-block;
+  text-align: center;
+}
+
+.cu-form-group .icon {
+  color: #666;
+  font-size: 32rpx;
+  flex: 1;
+  text-align: left;
+}
+
+.cu-form-group .title {
+  color: #666;
+  font-size: 32rpx;
+  min-width: 160rpx;
+  flex: 3;
+  text-align: center;
+}
+
+.cu-form-group .content {
+  color: #808080;
+  align-items: left;
+  text-align: left;
+  flex: 10;
+}
+
+.cu-form-group .col-1 {
+  flex: 1;
+}
+
+.cu-form-group .col-2 {
+  flex: 7;
+}
+
+.cu-form-group .col-3 {
+  flex: 2;
+}
+
+.content-form-group {
+  align-items: start;
+  height: 400rpx;
+}
+
+.content-form-group .icon {
+  font-size: 35rpx;
+  margin-top: 29rpx;
+}
+.content-form-group .title {
+  margin-top: 19rpx;
+}
+
+.lastChangeTimeBar {
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.cu-form-group-bottom {
+  width: 100%;
+  height: 100rpx;
+}
+
+.cu-form-group-bottom .cu-bar .cu-btn {
+  height: 80rpx;
+}

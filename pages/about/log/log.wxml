@@ -1,18 +1,75 @@
 <!--pages/about/log/log.wxml-->
-<cu-custom bgColor="bg-gradual-molan26to30" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">日志</view></cu-custom>
+<cu-custom bgColor="bg-gradual-molan26to30" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">日志</view>
+</cu-custom>
 <view class="cu-timeline">
-  <view class="cu-item text-bergundy bg-nearlyWhite">
-    <view class="bg-gradual-molan14to26 content shadow">
+  <view class="cu-item text-molan22 bg-nearlyWhite">
+    <view class="bg-gradual-molan22to21 content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-nearlyWhite text-bergundy">v1.0.0</view>
+        <view class="cu-tag line-nealyWhite">2020/03/26</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.完成域名服务器和小程序正式绑定</view>
+        <view>2.完成任务清单的交互界面</view>
+        <view>3.完成笔记贴的交互界面</view>
+        <view>4.发布小程序`喵贴v1.0.0`</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item text-molan07 bg-nearlyWhite">
+    <view class="bg-gradual-molan07to08 content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-nearlyWhite text-bergundy">v1.0.0</view>
+        <view class="cu-tag line-nealyWhite">2020/03/22</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.开启后端服务器并测试小程序域名绑定</view>
+        <view>2.实现github仓库数据实时获取功能</view>
+        <view>3.完成任务清单的逻辑存储部分功能</view>
+        <view>4.完成笔记贴的逻辑存储部分功能</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item text-molan07 bg-nearlyWhite">
+    <view class="bg-gradual-molan07to08 content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-nearlyWhite text-bergundy">v1.0.0</view>
+        <view class="cu-tag line-nealyWhite">2020/03/19</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.调研并完成域名注册及一堆实名认证</view>
+        <view>2.利用之前的个人网站服务端代码，创建`喵贴`后端服务</view>
+        <view>3.和产品对接微调小程序页面色调</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item text-molan12 bg-nearlyWhite">
+    <view class="bg-gradual-molan12to11 content shadow">
       <view class="cu-capsule radius">
         <view class="cu-tag bg-nearlyWhite text-bergundy">v1.0.0</view>
         <view class="cu-tag line-nealyWhite">2020/03/09</view>
       </view>
       <view class="margin-top-sm text-content">
-        <view>1.完成任务清单功能</view>
-        <view>2.完成笔记贴功能</view>
-        <view>3.完成打卡喵币积累功能</view>
-        <view>4.优化页面色调</view>
+        <view>1.选取ColorUI作为UI基础库</view>
+        <view>2.完成“Menu”界面和“About”界面</view>
+        <view>3.完成“About”各部分子界面</view>
+        <view>4.添加自定义色调并优化页面色调</view>
       </view>
-    </view>   
+    </view>
+  </view>
+  <view class="cu-item text-molan12 bg-nearlyWhite">
+    <view class="bg-gradual-molan12to11 content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-nearlyWhite text-bergundy">v0.0.0</view>
+        <view class="cu-tag line-nealyWhite">2020/03/06</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.创建公众号`野崎小千代`</view>
+        <view>2.创建小程序开发号`喵贴`</view>
+        <view>3.开始小程序学习调研之路</view>
+      </view>
+    </view>
   </view>
 </view>

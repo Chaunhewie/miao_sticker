@@ -1,0 +1,8 @@
+<!--components/tipsInfo/tipsInfo.wxml-->
+<view class="tipsInfo">
+  <image src="/assets/img/MiaoLogo.png" class="tipsInfo__icon">
+  </image>
+  <text class="tipsInfo__text">
+    {{ text }}
+  </text>
+</view>

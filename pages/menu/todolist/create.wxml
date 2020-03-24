@@ -1,2 +1,50 @@
 <!--pages/menu/todolist/create.wxml-->
-<text>pages/menu/todolist/create.wxml</text>
+<cu-custom bgColor="bg-gradual-molan07to08" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{ isNew? "创建任务" : "编辑任务" }}</view>
+</cu-custom>
+<view class="page">
+  <form>
+    <todo todo="{{ todo }}" autoFocusTitle="{{true}}" showDateType="{{0}}" bindchange="handleTodoChange">
+    </todo>
+    <view class="cu-form-group">
+      <text class="icon cuIcon-light lg"></text>
+      <view class="title">优先级</view>
+      <view class="content">
+        <picker class="" range="{{ levels }}" value="{{ todo.level - 1 }}" bindchange="handleLevelChange">
+          {{ levels[todo.level - 1] }}
+        </picker>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <text class="icon cuIcon-time lg text-gray"></text>
+      <view class="title text-xl">预完成于</view>
+      <view class="content">
+        <dtPicker time="{{ todo.planToCompleteAt }}" bindtimeChange="handlePlanToCompleteAtChange">
+        </dtPicker>
+      </view>
+    </view>
+    <view class="cu-form-group content-form-group">
+      <text class="icon cuIcon-text lg text-gray"></text>
+      <view class="title text-xl">内容</view>
+      <view class="content">
+        <textarea bindinput="handleContentChange" maxlength="-1" placeholder="请输入内容" value="{{ todo.content }}" style="color: #808080"></textarea>
+      </view>
+    </view>
+    <view class="cu-form-group lastChangeTimeBar" style="padding: 18rpx 15rpx;">
+      <view class="col-1"></view>
+      <view class="col-2">
+        <view class="todo__lastChangeAtText">上次修改于</view>
+      </view>
+      <view class="col-3">
+        <view class="todo__lastChangeAt">{{ todo.lastChangeAt }}</view>
+      </view>
+    </view>
+    <view class="cu-form-group-bottom">
+      <view class="cu-bar btn-group">
+        <button class="cu-btn bg-molan03 shadow-blur round" aria-disabled="false" bindtap="handleCancelTap">取消</button>
+        <button class="cu-btn bg-molan11 shadow-blur round" aria-disabled="false" bindtap="handleSaveTap">保存</button>
+      </view>
+    </view>
+  </form>
+</view>

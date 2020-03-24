@@ -1,10 +1,19 @@
 <!--pages/menu/me/me.wxml-->
-<cu-custom bgColor="bg-gradual-molan26to30" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">我的信息</view></cu-custom>
+<cu-custom bgColor="bg-gradual-molan25to31" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的信息</view>
+</cu-custom>
 <view class="user-card bg-nearlyWhite">
   <image class="user-card__bg" src="../../../assets/img/me_bg.jpg" mode="cover"></image>
   <view class="user-card__info">
-    <image class="user-card__head bg-nearlyWhite" src="{{ userInfo.avatarUrl }}" bindgetuserinfo="getUserInfo"></image>
-    <text class="user-card__name text-xl text-bergundy" bindgetuserinfo="getUserInfo">{{ userInfo.nickName }}</text>
+    <view class="user-card__headAndTag">
+      <view class="user-card__head bg-nearlyWhite">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="user-card__maleTag cu-tag badge cuIcon-male bg-blue" style="display:{{ showGenderFlag==1 ? 'inline-flex': 'none' }}"></view>
+      <view class="user-card__femaleTag cu-tag badge cuIcon-female bg-pink" style="display:{{ showGenderFlag==2 ? 'inline-flex': 'none' }}"></view>
+    </view>
+    <open-data class="user-card__name text-xl text-bergundy" type="userNickName"></open-data>
   </view>
   <view class="user-card__links text-xl text-molan14">
     <view class="user-card__linkItem" bindtap="linkToTodolist">
@@ -23,5 +32,5 @@
 </view>
 <view class="charts-card">
   <text class="charts-card__header text-lg text-darkGray">任务完成率</text>
-  <canvas class="charts-card__body" canvas-id="charts"></canvas>
+  <canvas class="charts-card__body" canvas-id="charts_todolist_info"></canvas>
 </view>

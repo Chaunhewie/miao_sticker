@@ -9,8 +9,8 @@ class StickerlistStore extends ListStore {
   constructor() {
     super()
     this.itemlist = []
-    this.key = '__stickerlist__'
-    this.init_key = '__stickerlist_inited__'
+    this.key = '__SL__'
+    this.init_key = '__SL_I__'
     this.__init()
   }
 

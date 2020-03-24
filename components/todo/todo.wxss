@@ -1,0 +1,67 @@
+/* components/todo/todo.wxss */
+
+.todo {
+  display: flex;
+  background: #fff;
+  border-left: 8rpx solid red;
+  font-size: 32rpx;
+  padding: 18rpx 15rpx;
+  align-items: center;
+  border-bottom: 1rpx dashed #f0f3ff;
+}
+
+.todo--level1 {
+  border-left-color: rgb(223, 25, 25);
+}
+
+.todo--level2 {
+  border-left-color: rgb(204, 123, 2);
+}
+
+.todo--level3 {
+  border-left-color: rgb(1, 111, 167);
+}
+
+.todo--level4 {
+  border-left-color: #6d7c61;
+}
+
+.todo__col1 {
+  flex: 1;
+}
+
+.todo__col2 {
+  flex: 7;
+}
+
+.todo__col3 {
+  flex: 2;
+}
+
+.todo__checkbox {
+  display: inline-block;
+  padding: 8rpx 32rpx 0 20rpx;
+  vertical-align: middle;
+}
+
+.todo__title {
+  color: #666;
+  display: inline-block;
+  vertical-align: middle;
+  width: 98%;
+}
+
+.todo--completed .todo__title {
+  color: #bfbfbf;
+}
+
+.todo__date {
+  font-size: 28rpx;
+  color: #aaa;
+  display: inline-block;
+  text-align: center;
+}
+
+.todo--completed .todo__date {
+  color: #e7ebed;
+}

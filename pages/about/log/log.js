@@ -1,6 +1,6 @@
 // pages/about/log/log.js
 Page({
-  onLoad: function () { },
+  onLoad: function() {},
   pageBack() {
     wx.navigateBack({
       delta: 1
