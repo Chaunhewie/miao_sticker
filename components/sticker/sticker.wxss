@@ -15,7 +15,7 @@
   padding: 0 20rpx 20rpx 0;
 }
 
-.sticker__title-lockicon{
+.sticker__title-lockOrDeleteIcon{
   margin-top: 6rpx;
 }
 

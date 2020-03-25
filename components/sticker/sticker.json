@@ -1,3 +1,6 @@
 {
+  "usingComponent": {
+    "sticker": "/component/sticker/sticker"
+  },
   "component": true
 }

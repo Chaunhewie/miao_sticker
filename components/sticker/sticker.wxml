@@ -1,14 +1,14 @@
 <!--components/sticker/sticker.wxml-->
-<view class="sticker bg-nearlyWhite" bindtap="handleStickerTap" bindlongtap="handleStickerLongTap">
+<view class="sticker bg-nearlyWhite" bindlongpress="handleStickerLongPress">
   <view class="sticker__title {{ sticker.title ? text-darkGray : text-gray}}">
-    <view class="sticker__title-content">
+    <view class="sticker__title-content" bindtap="handleTitleTap">
       {{sticker.title || '默认标题...'}}
     </view>
-    <view wx:if="{{sticker.disabled}}" class="sticker__title-lockicon">
-      <text class="cuIcon-lock xl"></text>
+    <view class="sticker__title-lockOrDeleteIcon" animation="{{ lockOrDeleteAnimation }}" bindtap="handleStickerDeleteTap">
+      <text class="cuIcon-{{ lockOrDeleteIcon }} xl"></text>
     </view>
   </view>
-  <view class="sticker__content {{ sticker.content ? text-molan30 : text-molan07}}">
+  <view class="sticker__content {{ sticker.content ? text-molan30 : text-molan07}}" bindtap="handleContentTap">
     {{sticker.content || '暂无内容...'}}
   </view>
 </view>

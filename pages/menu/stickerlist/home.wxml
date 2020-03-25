@@ -4,10 +4,10 @@
   <view slot="content">笔记贴</view>
 </cu-custom>
 <view class="page">
-  <view wx:for="{{ stickerlist }}" wx:key="index" class="sticker-list__item animation-scale-up" style="animation-delay: {{ delay ? index * 0.1 : 0 }}s">
-    <sticker sticker="{{ item }}" bindstickerTap="handleStickerTap" bindchange="handleStickerChange" data-index="{{ index }}" data-uuid="{{item.uuid}}">
+  <view wx:for="{{ stickerlist }}" wx:key="uuid" class="sticker-list__item animation-scale-up" style="animation-delay: {{ delay ? index * 0.1 : 0 }}s">
+    <sticker sticker="{{ item }}" bindstickerTap="handleStickerTap" bindchange="handleStickerChange" binddelete="handleStickerDelete" data-index="{{ index }}" data-uuid="{{item.uuid}}">
     </sticker>
-  </view>
+  </view> 
   <view class="ripple bounceIn" wx:if="{{ !stickerlist.length }}">
     <tipsInfo text="还没有笔记哦，快去新建一个吧！">
     </tipsInfo>

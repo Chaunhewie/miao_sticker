@@ -65,6 +65,21 @@ Page({
     this.update()
   },
 
+  handleStickerDelete(e) {
+    // 获取 index
+    let index = e.currentTarget.dataset.index
+    wx.showModal({
+      title: '删除提示',
+      content: '确定要删除这篇小记吗？',
+      success: (e) => {
+        if (e.confirm) {
+          this.data.stickerlist.splice(index, 1)
+          this.update()
+        }
+      }
+    })
+  },
+
   editSticker(e) {
     var uuid = e.currentTarget.dataset.uuid
     wx.navigateTo({
