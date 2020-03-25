@@ -1,9 +1,14 @@
 <!--components/sticker/sticker.wxml-->
-<view class="sticker bg-nearlyWhite">
-  <view wx:if="{{ !!sticker.title }}" class="sticker__title text-darkGray">
-    {{sticker.title}}
+<view class="sticker bg-nearlyWhite" bindtap="handleStickerTap" bindlongtap="handleStickerLongTap">
+  <view class="sticker__title {{ sticker.title ? text-darkGray : text-gray}}">
+    <view class="sticker__title-content">
+      {{sticker.title || '默认标题...'}}
+    </view>
+    <view wx:if="{{sticker.disabled}}" class="sticker__title-lockicon">
+      <text class="cuIcon-lock xl"></text>
+    </view>
   </view>
-  <view class="sticker__content text-molan30">
-    {{sticker.content || '新建笔记'}}
+  <view class="sticker__content {{ sticker.content ? text-molan30 : text-molan07}}">
+    {{sticker.content || '暂无内容...'}}
   </view>
 </view>

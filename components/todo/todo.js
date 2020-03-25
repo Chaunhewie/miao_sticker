@@ -47,11 +47,11 @@ Component({
    */
   methods: {
     handleTitleTap(e) {
-      this.triggerEvent('titleTap')
+      this.triggerEvent('titleTap', this)
     },
 
     handleDateTap(e) {
-      this.triggerEvent('dateTap')
+      this.triggerEvent('dateTap', this)
     },
 
     handleCompletedChange(e) {

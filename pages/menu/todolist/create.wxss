@@ -4,14 +4,14 @@
   background-color: rgba(231, 231, 231, 0.5);
 }
 
-.cu-form-group .todo__lastChangeAtText {
+.cu-form-group .todo__lastChangeAtText, .cu-form-group .todo__completedAtText {
   font-size: 28rpx;
   color: #808080;
   padding-right: 10px;
   text-align: right;
 }
 
-.cu-form-group .todo__lastChangeAt {
+.cu-form-group .todo__lastChangeAt, .cu-form-group .todo__completedAt {
   font-size: 28rpx;
   color: #aaa;
   display: inline-block;
@@ -61,12 +61,13 @@
   font-size: 35rpx;
   margin-top: 29rpx;
 }
+
 .content-form-group .title {
   margin-top: 19rpx;
 }
 
-.lastChangeTimeBar {
-  background-color: rgb(0, 0, 0, 0);
+.lastChangeTimeBar, .completedAtBar {
+  background-color: rgb(231, 231, 231, 0);
 }
 
 .cu-form-group-bottom {

@@ -4,7 +4,7 @@
   <view slot="content">{{ isNew? "创建任务" : "编辑任务" }}</view>
 </cu-custom>
 <view class="page">
-  <form>
+  <form class="todo-form">
     <todo todo="{{ todo }}" autoFocusTitle="{{true}}" showDateType="{{0}}" bindchange="handleTodoChange">
     </todo>
     <view class="cu-form-group">
@@ -38,6 +38,15 @@
       </view>
       <view class="col-3">
         <view class="todo__lastChangeAt">{{ todo.lastChangeAt }}</view>
+      </view>
+    </view>
+    <view class="cu-form-group completedAtBar" style="padding: 18rpx 15rpx;" wx:if="{{ todo.completed }}">
+      <view class="col-1"></view>
+      <view class="col-2">
+        <view class="todo__completedAtText">完成于</view>
+      </view>
+      <view class="col-3">
+        <view class="todo__completedAt">{{ todo.lastChangeAt }}</view>
       </view>
     </view>
     <view class="cu-form-group-bottom">

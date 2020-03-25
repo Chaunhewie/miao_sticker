@@ -9,9 +9,14 @@
 }
 
 .sticker__title {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1rpx dashed #b5c4b1;
   padding: 0 20rpx 20rpx 0;
+}
+
+.sticker__title-lockicon{
+  margin-top: 6rpx;
 }
 
 .sticker__content {

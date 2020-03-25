@@ -8,7 +8,7 @@ Page({
     stickerlist: [],
 
     // 是否动画延迟
-    delay: true
+    delay: true,
   },
 
   onShow: function() {
@@ -42,37 +42,33 @@ Page({
 
   update(data) {
     data = data || this.data
-    // todolistStore备份
+    // stickerlistStore备份
     storeManager.getStickerlistStore().save()
     this.setData(data)
   },
 
-  // 点击事件
-  handleStickerTap(e) {
-    // 判断锁
-    if (this.disableTap) return
-    // todo 在这里执行点击事件
-  },
-
-  // 长按事件
-  handleStickerLongTap(e) {
-    // 加锁 tap 事件
-    this.disableTap = true
-    // 在这里执行长按操作
-  },
-
-  // Touch End 事件
-  handleStickerTouchEnd() {
-    // 解锁 tap 事件
-    setTimeout(() => this.disableTap = false, 300)
-  },
-
-  /**
-   * 新建按钮点击事件
-   */
   handleAddSticker() {
     wx.navigateTo({
-      url: '../sticker/create'
+      url: './create'
+    })
+  },
+
+  handleStickerTap(e) {
+    this.editSticker(e)
+  },
+
+  handleStickerChange(e){
+    let index = e.currentTarget.dataset.index
+    let sticker = e.detail.data.sticker
+    let item = this.data.stickerlist[index]
+    Object.assign(item, sticker)
+    this.update()
+  },
+
+  editSticker(e) {
+    var uuid = e.currentTarget.dataset.uuid
+    wx.navigateTo({
+      url: './create?uuid=' + uuid
     })
   },
 

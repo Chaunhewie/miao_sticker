@@ -11,12 +11,16 @@ class Sticker extends Model {
       title: '',
       content: '',
       disabled: false,
-      createdAt: util.formatTime(new Date())
+      createdAt: util.formatTime(new Date()), // 创建时间
+      lastChangeAt: util.formatTime(new Date()), // 上次修改时间
     }, model)
 
     // 日期格式化
     if (this.createdAt.constructor === Date) {
       this.createdAt = util.formatTime(this.createdAt)
+    }
+    if (this.lastChangeAt.constructor === Date) {
+      this.lastChangeAt = util.formatTime(this.lastChangeAt)
     }
   }
 }

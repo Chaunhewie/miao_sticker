@@ -25,8 +25,8 @@
       <text bindtap="handleShowDateTypeChange">{{ showDateTypeText[showDateType][1] }}</text>
     </view>
     <view wx:for="{{ todolist }}" wx:key="index" wx:if="{{ item.completed }}" class="todo-list__item animation-slide-right" style="animation-delay: {{ delay ? index * 0.1 : 0 }}s">
-      <todo class="todo" todo="{{ item }}" autoFocusTitle="{{false}}" disableChangeTitle="{{true}}" disableChangeDate="{{true}}" showDateType="{{ showDateType==2? 3 : showDateType }}" bindchange="handleTodoChange" bindtitleTap="handleTitleTap" binddateTap="handleDateTap" data-index="{{ index }}"
-        data-uuid="{{item.uuid}}" bindlongpress="handleTodoLongPress">
+      <todo class="todo" todo="{{ item }}" autoFocusTitle="{{false}}" disableChangeTitle="{{true}}" disableChangeDate="{{true}}" showDateType="{{ showDateType==2? 3 : showDateType }}" bindchange="handleTodoChange" bindtitleTap="handleTitleTap" binddateTap="handleDateTap"
+        data-index="{{ index }}" data-uuid="{{item.uuid}}" bindlongpress="handleTodoLongPress">
       </todo>
     </view>
   </view>

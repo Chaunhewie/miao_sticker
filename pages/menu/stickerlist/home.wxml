@@ -5,7 +5,7 @@
 </cu-custom>
 <view class="page">
   <view wx:for="{{ stickerlist }}" wx:key="index" class="sticker-list__item animation-scale-up" style="animation-delay: {{ delay ? index * 0.1 : 0 }}s">
-    <sticker sticker="{{ item }}" data-index="{{ index }}" bindtap="handleStickerTap" bindlongtap="handleStickerLongTap" bindtouchend="handleStickerTouchEnd">
+    <sticker sticker="{{ item }}" bindstickerTap="handleStickerTap" bindchange="handleStickerChange" data-index="{{ index }}" data-uuid="{{item.uuid}}">
     </sticker>
   </view>
   <view class="ripple bounceIn" wx:if="{{ !stickerlist.length }}">
